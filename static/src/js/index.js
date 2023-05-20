@@ -1,14 +1,16 @@
 const productsSettings = {
     async: true,
     crossDomain: true,
-    url: 'https://django-server-production-157c.up.railway.app/api',
+    // url: 'https://django-server-production-157c.up.railway.app/api',
+    url: 'https://django-server-production-d59b.up.railway.app/api',
     method: 'GET',
 };
 
 const offerSettings = {
     async: true,
     crossDomain: true,
-    url: 'https://django-server-production-157c.up.railway.app/api/offer',
+    // url: 'https://django-server-production-157c.up.railway.app/api/offer',
+    url: 'https://django-server-production-d59b.up.railway.app/api/offer',
     method: 'GET',
 };
 
