@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Título personalizado{% endblock %}
+{% block css %}
+<link href="{% static 'src/css/index.css' %}"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossOrigin="anonymous">
+{% endblock %}
+
+
+{% block content %}
+<!--drawer-->
+{% include 'drawer.html' %}
+<!--carrousel-->
+<div id="carouselExampleIndicators" class="carousel slide"
+	data-bs-ride="carousel ">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleIndicators"
+			data-bs-slide-to="0" class="active" aria-current="true"
+			aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators"
+			data-bs-slide-to="1" aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators"
+			data-bs-slide-to="2" aria-label="Slide 3"></button>
+	</div>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<a href="/product">
+				<img
+					src="{% static '/imagens/polera.png' %}"
+					class="d-block h-96 object-contain mx-auto" alt="..."/>
+			</a>
+		</div>
+		<div class="carousel-item">
+			<a href="/product">
+				<img
+					src="{% static '/imagens/cinturon.png' %}"
+					class="d-block h-96 object-contain mx-auto" alt="..."/>
+			</a>
+		</div>
+		<div class="carousel-item">
+			<a href="/product">
+				<img
+					src="{% static '/imagens/sidaderapichu.png' %}"
+					class="d-block h-96 object-contain mx-auto" alt="..."/>
+			</a>
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button"
+		data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-gray-600 rounded-full px-3"
+	    aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button"
+		data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-gray-600 rounded-full px-3"
+	    aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+
+<div class="h-full w-full flex justify-center items-center">
+	<!-- div 1 -->
+	<div id="ofertas" class="my-6 flex h-80 w-full gap-6 overflow-x-auto"></div>
+
+</div>
+
+
+<div class="section-queofresemos">
+	<h2 class="Titulo-1">
+		¿Que ofrecemos?
+	</h2>
+	<div>
+		<p class="section-queofresemos--p">
+			Ofrecemos accesorio para todo maestro pokemon en una exelente calidad y precio.
+			Contamos con ropa, juguetes, pulseras y muchos otros. <br> Te invito a revisar nuestro catalogo dandole al icono
+			de <b>Shop</b>
+		</p>
+	</div>
+</div>
+
+<!-- div 2 -->
+<div
+	id="productos"
+	class="mx-auto py-4 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+</div>
+
+
+<div class="w-full flex py-10 gap-8 flex-col px-6 xs:px-12 sm:flex-row sm:px-14 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
+
+	<div class="basis-1/2 flex justify-center items-center">
+		<p class="section-queofresemos--p">
+			Si estas suscrito a nuestra plataforma obtendras diversos beneficios <br> estos son: <strong> Descuentos
+			especiales</strong>, <strong>Envio asegurado</strong> y <strong>derecho a catalogo con un dia de
+			anticipacion</strong>.
+		</p>
+	</div>
+	<div class="basis-1/2 flex justify-center items-center">
+		<div
+			class="max-w-xs sm:max-w-md w-full p-6 bg-white border border-gray-200 rounded-lg shadow">
+			<div class="flex justify-center items-center">
+				<h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">Pokemon Sub</h5>
+			</div>
+
+			<p class="mb-3 font-normal text-gray-700">$5 al mes</p>
+
+			<ul role="list" class="w-full lg:w-1/2 space-y-5 my-4 ">
+				<li class="flex space-x-3">
+					<svg aria-hidden="true"
+						class="flex-shrink-0 w-5 h-5 text-blue-600"
+						fill="currentColor" viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<title>Check icon</title>
+						<path fill-rule="evenodd"
+							d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+							clip-rule="evenodd">
+						</path>
+					</svg>
+					<span
+						class="text-base font-normal leading-tight text-gray-500">apoyar organizacion sin fines de lucro</span>
+				</li>
+			</ul>
+
+			<a href="/usuario/suscripcion"
+				class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+				Ir a pagar
+				<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+					xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</a>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+{% block js %}
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+	crossOrigin="anonymous"></script>
+<script src="{% static 'src/js/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}Django + Tailwind CSS + Flowbite{% endblock %}</title>
+	{% block css %}{% endblock %}
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				screens: {
+					xxs: "320px",
+					xs: "480px",
+					sm: "640px",
+					md: "768px",
+					lg: "1024px",
+					xl: "1280px",
+					xxl: "1536px"
+				},
+				extend: {}
+			}
+		}
+	</script>
+</head>
+<body>
+<div class="h-screen w-full flex flex-col">
+	{% include 'nav.html' %}
+	{% block content %}
+	{% endblock content %}
+	{% include 'footer.html' %}
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+	integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

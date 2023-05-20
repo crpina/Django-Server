@@ -1,0 +1,31 @@
+.Caja-register{
+
+
+
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 30px;
+    border-radius: 20px;
+
+
+}
+
+.item-caja-tarjeta{
+
+    margin-bottom: 20px;
+
+}
+
+
+.error{
+    color: red;
+    display: block;
+    text-justify: center;
+    font-size: 15px;
+}
+
+.texto_valido{
+
+    display: none;
+
+}
