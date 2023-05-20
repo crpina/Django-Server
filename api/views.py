@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from firebase_admin import db, storage
 
 from mysite.settings import BASE_DIR
+# from tienda.models import Usuario
 
 pokemonAccesoriesList = [
   "Gorra de Ash Ketchum",
@@ -155,4 +156,8 @@ subcriptionData = {
 }
 
 def subcription(request):
+  # usuario = Usuario( nombre='John Doe', email='johndoe@example.com' )
+  # usuario.save()
+  # usuarios = Usuario.objects.filter( nombre='John Doe' )
+  # print(usuarios[0].email)
   return JsonResponse(subcriptionData)
