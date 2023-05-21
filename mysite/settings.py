@@ -35,11 +35,12 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
-INSTALLED_APPS = ['corsheaders',
-	'django.contrib.admin', 'django.contrib.auth',
+INSTALLED_APPS = ['corsheaders', 'django.contrib.admin', 'django.contrib.auth',
 	'django.contrib.contenttypes', 'django.contrib.sessions',
 	'django.contrib.messages', 'django.contrib.staticfiles', 'tienda', 'shared',
 	'api', ]
+
+CORS_ORIGIN_ALLOW_ALL = True  # Permitir todas las solicitudes de cualquier origen
 
 MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware',
 	'django.middleware.security.SecurityMiddleware',
@@ -82,7 +83,7 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [{
 	'NAME': 'django.contrib.auth.password_validation'
-          '.UserAttributeSimilarityValidator',
+	        '.UserAttributeSimilarityValidator',
 }, {
 	'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
 }, {
