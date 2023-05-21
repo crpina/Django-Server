@@ -15,7 +15,7 @@ const offerSettings = {
 };
 
 const productsList = []
-x
+
 $(document).ready(function () {
     const ofertas = $('#ofertas')
     const productos = $('#productos')
