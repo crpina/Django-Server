@@ -1,0 +1,628 @@
+{% extends 'base_admin.html' %}
+{% block aside-content %}
+	<div aria-hidden="true"
+		id="edit-modal"
+		class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
+		<div class="relative w-full h-full max-w-md md:h-auto">
+			<div class="relative bg-white rounded-lg shadow">
+				<button type="button"
+					class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+					data-modal-hide="edit-modal">
+					<svg aria-hidden="true"
+						class="w-5 h-5"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd"
+							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+					<span class="sr-only">Close modal</span>
+				</button>
+				<div class="px-6 py-6 lg:px-8">
+					<h3
+						class="mb-4 text-xl font-medium text-gray-900">Editar
+						x</h3>
+					<form class="space-y-6"
+						action="#">
+						<div>
+							<label htmlFor="text1"
+								class="block mb-2 text-sm font-medium text-gray-900">
+								campo1
+							</label>
+							<input type="text"
+								name="text"
+								id="text1"
+								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+								required/>
+						</div>
+						<button type="submit"
+							class="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+							boton
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="p-4">
+		<div class="sm:rounded-t-lg shadow-md">
+			<table class="w-full text-sm text-left text-gray-500">
+				<thead
+					class="text-xs text-gray-700 uppercase bg-gray-50">
+				<tr>
+					<th scope="col"
+						class="px-6 py-3">
+						ID
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						NOMBRE
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						CORREO
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						CELULAR
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						DIRECCION
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						ACCION
+					</th>
+				</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="h-[32rem] overflow-auto shadow-md sm:rounded-b-lg">
+			<table
+				class="w-full text-sm text-left text-gray-500">
+				<tbody>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						1
+					</th>
+					<td class="px-6 py-4">
+						Maria Perez
+					</td>
+					<td class="px-6 py-4">
+						maria.perez@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 234 567 8901
+					</td>
+					<td class="px-6 py-4">
+						123 Main St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						2
+					</th>
+					<td class="px-6 py-4">
+						John Smith
+					</td>
+					<td class="px-6 py-4">
+						john.smith@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 987 654 3210
+					</td>
+					<td class="px-6 py-4">
+						456 Elm St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						3
+					</th>
+					<td class="px-6 py-4">
+						Ana Rodriguez
+					</td>
+					<td class="px-6 py-4">
+						ana.rodriguez@yahoo.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 123 4567
+					</td>
+					<td class="px-6 py-4">
+						789 Oak St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						4
+					</th>
+					<td class="px-6 py-4">
+						Carlos Gonzalez
+					</td>
+					<td class="px-6 py-4">
+						carlos.gonzalez@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 444 3333
+					</td>
+					<td class="px-6 py-4">
+						567 Pine St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						5
+					</th>
+					<td class="px-6 py-4">
+						Sarah Johnson
+					</td>
+					<td class="px-6 py-4">
+						sarah.johnson@yahoo.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 222 3333
+					</td>
+					<td class="px-6 py-4">
+						789 Maple St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						6
+					</th>
+					<td class="px-6 py-4">
+						Juan Ramirez
+					</td>
+					<td class="px-6 py-4">
+						juan.ramirez@hotmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 111 3333
+					</td>
+					<td class="px-6 py-4">
+						123 Oak St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						7
+					</th>
+					<td class="px-6 py-4">
+						Emily Davis
+					</td>
+					<td class="px-6 py-4">
+						emily.davis@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 222 4444
+					</td>
+					<td class="px-6 py-4">
+						456 Oak St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						8
+					</th>
+					<td class="px-6 py-4">
+						Alicia Medina
+					</td>
+					<td class="px-6 py-4">
+						medina.alicia@email.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 987 6543
+					</td>
+					<td class="px-6 py-4">
+						1234 Maple Ln, Bigtown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						9
+					</th>
+					<td class="px-6 py-4">
+						Michael Thompson
+					</td>
+					<td class="px-6 py-4">
+						michael.thompson@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 777 9999
+					</td>
+					<td class="px-6 py-4">
+						789 Cherry St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						10
+					</th>
+					<td class="px-6 py-4">
+						Rachel Anderson
+					</td>
+					<td class="px-6 py-4">
+						rachel.anderson@hotmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 888 7777
+					</td>
+					<td class="px-6 py-4">
+						234 Elm St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						11
+					</th>
+					<td class="px-6 py-4">
+						Thomas Jackson
+					</td>
+					<td class="px-6 py-4">
+						thomas.jackson@yahoo.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 999 6666
+					</td>
+					<td class="px-6 py-4">
+						345 Maple St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						12
+					</th>
+					<td class="px-6 py-4">
+						Sophia Lee
+					</td>
+					<td class="px-6 py-4">
+						sophia.lee@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 777 5555
+					</td>
+					<td class="px-6 py-4">
+						456 Maple St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						13
+					</th>
+					<td class="px-6 py-4">
+						William Davis
+					</td>
+					<td class="px-6 py-4">
+						william.davis@hotmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 888 9999
+					</td>
+					<td class="px-6 py-4">
+						567 Oak St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						14
+					</th>
+					<td class="px-6 py-4">
+						Madison Clark
+					</td>
+					<td class="px-6 py-4">
+						madison.clark@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 777 4444
+					</td>
+					<td class="px-6 py-4">
+						678 Oak St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						15
+					</th>
+					<td class="px-6 py-4">
+						Ethan Rodriguez
+					</td>
+					<td class="px-6 py-4">
+						ethan.rodriguez@yahoo.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 888 5555
+					</td>
+					<td class="px-6 py-4">
+						890 Cedar Rd, Midtown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						16
+					</th>
+					<td class="px-6 py-4">
+						Isabella Rivera
+					</td>
+					<td class="px-6 py-4">
+						isabella.rivera@hotmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 777 3333
+					</td>
+					<td class="px-6 py-4">
+						890 Oak St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						17
+					</th>
+					<td class="px-6 py-4">
+						Gabriel Perez
+					</td>
+					<td class="px-6 py-4">
+						gabriel.perez@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 888 2222
+					</td>
+					<td class="px-6 py-4">
+						369 Spruce Ave, Anywhere, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						18
+					</th>
+					<td class="px-6 py-4">
+						Mia Thompson
+					</td>
+					<td class="px-6 py-4">
+						mia.thompson@yahoo.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 777 2222
+					</td>
+					<td class="px-6 py-4">
+						1010 Cedar St, Newtown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						19
+					</th>
+					<td class="px-6 py-4">
+						Oliver Harris
+					</td>
+					<td class="px-6 py-4">
+						oliver.harris@hotmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 888 1111
+					</td>
+					<td class="px-6 py-4">
+						345 Elm St, Anytown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						20
+					</th>
+					<td class="px-6 py-4">
+						Sophia Lee
+					</td>
+					<td class="px-6 py-4">
+						sophia.lee@gmail.com
+					</td>
+					<td class="px-6 py-4">
+						+1 555 777 1111
+					</td>
+					<td class="px-6 py-4">
+						2468 Birch Dr, Hometown, USA
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				</tbody>
+
+			</table>
+		</div>
+
+	</div>
+
+{% endblock %}

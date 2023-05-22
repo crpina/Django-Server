@@ -20,9 +20,9 @@ from usuario import views as usuario_views
 urlpatterns = [
 	path( 'admin/', admin.site.urls ),
 	path( '', include( 'tienda.urls' ) ),
-	path( 'api', include( 'api.urls' ) ),
-	path( 'registro/', usuario_views.registro ),
-	path( 'login/', usuario_views.login ),
-	path( 'usuario', include( 'usuario.urls' ) ),
-	path( 'admin', include( 'administracion.urls' ) ),
+	path( 'api/', include( 'api.urls' ) ),
+	path( 'registro', usuario_views.registro ),
+	path( 'login', usuario_views.login ),
+	path( 'usuario/', include( 'usuario.urls' ) ),
+	path( 'administracion/', include( 'administracion.urls' ) ),
 ]
