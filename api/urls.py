@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.products),
     path('offer', views.offer),
     path('sub', views.subcription),
+    path('file', views.file),
 ]
