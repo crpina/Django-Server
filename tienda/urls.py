@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import index, error_page
+from .views import index, pago,orden,detalle_producto
 urlpatterns = [
     path('', index, name='inicio'),
-    path('404', error_page, name='404')
+    path('pago', pago, name='pago'),
+    path('orden', orden, name='orden'),
+    path('producto', detalle_producto, name='detalle_producto'),
 ]

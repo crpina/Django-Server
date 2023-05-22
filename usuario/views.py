@@ -17,3 +17,6 @@ def historial_pedidos(request):
 
 def suscripcion(request):
 	return render(request, 'suscripcion.html')
+
+def cambiar_contrasena(request):
+	return render(request, 'cambiar_contrasena.html')

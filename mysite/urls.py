@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from usuario import views as usuario_views
+from tienda import views as tienda_views
 
 urlpatterns = [
 	path( 'admin/', admin.site.urls ),
 	path( '', include( 'tienda.urls' ) ),
+	path( '404', tienda_views.error_page, name='404' ),
+	path( 'registro', usuario_views.registro , name='registro'),
+	path( 'login', usuario_views.login , name='login'),
 	path( 'api/', include( 'api.urls' ) ),
-	path( 'registro', usuario_views.registro ),
-	path( 'login', usuario_views.login ),
 	path( 'usuario/', include( 'usuario.urls' ) ),
 	path( 'administracion/', include( 'administracion.urls' ) ),
 ]
