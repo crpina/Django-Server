@@ -1,0 +1,542 @@
+{% extends 'base_usuario.html' %}
+{% block aside-content %}
+	<div aria-hidden="true"
+		id="edit-modal"
+		class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
+		<div class="relative w-full h-full max-w-md md:h-auto">
+			<div class="relative bg-white rounded-lg shadow">
+				<button type="button"
+					class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+					data-modal-hide="edit-modal">
+					<svg aria-hidden="true"
+						class="w-5 h-5"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd"
+							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+					<span class="sr-only">Close modal</span>
+				</button>
+				<div class="px-6 py-6 lg:px-8">
+					<h3
+						class="mb-4 text-xl font-medium text-gray-900">Editar
+						x</h3>
+					<form class="space-y-6"
+						action="#">
+						<div>
+							<label htmlFor="text1"
+								class="block mb-2 text-sm font-medium text-gray-900">
+								campo1
+							</label>
+							<input type="text"
+								name="text"
+								id="text1"
+								class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+								required/>
+						</div>
+						<button type="submit"
+							class="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+							boton
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="p-4">
+		<div class="sm:rounded-t-lg shadow-md">
+			<table class="w-full text-sm text-left text-gray-500">
+				<thead
+					class="sticky text-xs text-gray-700 uppercase bg-gray-50">
+				<tr>
+					<th scope="col"
+						class="px-6 py-3">
+						ID PEDIDO
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						ESTADO PEDIDO
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						TOTAL PEDIDO
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						DIRECCION
+					</th>
+					<th scope="col"
+						class="px-6 py-3">
+						ACCION
+					</th>
+				</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="h-[32rem] overflow-auto shadow-md sm:rounded-b-lg">
+			<table
+				class="w-full text-sm text-left text-gray-500">
+				<tbody>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						7839
+					</th>
+					<td class="px-6 py-4">
+						En camino
+					</td>
+					<td class="px-6 py-4">
+						$89.99
+					</td>
+					<td class="px-6 py-4">
+						Calle 12 #23-45
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						2387
+					</th>
+					<td class="px-6 py-4">
+						Pendiente
+					</td>
+					<td class="px-6 py-4">
+						$56.78
+					</td>
+					<td class="px-6 py-4">
+						Carrera 7 #98-23
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						9045
+					</th>
+					<td class="px-6 py-4">
+						Entregado
+					</td>
+					<td class="px-6 py-4">
+						$112.50
+					</td>
+					<td class="px-6 py-4">
+						Avenida 3 #10-56
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						5612
+					</th>
+					<td class="px-6 py-4">
+						Cancelado
+					</td>
+					<td class="px-6 py-4">
+						$25.99
+					</td>
+					<td class="px-6 py-4">
+						Calle 45 #17-98
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						4356
+					</th>
+					<td class="px-6 py-4">
+						En proceso
+					</td>
+					<td class="px-6 py-4">
+						$67.89
+					</td>
+					<td class="px-6 py-4">
+						Carrera 12 #45-67
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						8901
+					</th>
+					<td class="px-6 py-4">
+						Entregado
+					</td>
+					<td class="px-6 py-4">
+						$150.00
+					</td>
+					<td class="px-6 py-4">
+						Avenida 5 #20-30
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						1234
+					</th>
+					<td class="px-6 py-4">
+						Pendiente
+					</td>
+					<td class="px-6 py-4">
+						$42.00
+					</td>
+					<td class="px-6 py-4">
+						Calle 67 #45-12
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						7865
+					</th>
+					<td class="px-6 py-4">
+						Cancelado
+					</td>
+					<td class="px-6 py-4">
+						$75.25
+					</td>
+					<td class="px-6 py-4">
+						Carrera 8 #10-34
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						5678
+					</th>
+					<td class="px-6 py-4">
+						En camino
+					</td>
+					<td class="px-6 py-4">
+						$98.50
+					</td>
+					<td class="px-6 py-4">
+						Calle 23 #56-78
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						2345
+					</th>
+					<td class="px-6 py-4">
+						En proceso
+					</td>
+					<td class="px-6 py-4">
+						$29.99
+					</td>
+					<td class="px-6 py-4">
+						Avenida 1 #15-20
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						8907
+					</th>
+					<td class="px-6 py-4">
+						Pendiente
+					</td>
+					<td class="px-6 py-4">
+						$65.40
+					</td>
+					<td class="px-6 py-4">
+						Calle 34 #56-78
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						3456
+					</th>
+					<td class="px-6 py-4">
+						Entregado
+					</td>
+					<td class="px-6 py-4">
+						$85.00
+					</td>
+					<td class="px-6 py-4">
+						Carrera 5 #30-45
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						6789
+					</th>
+					<td class="px-6 py-4">
+						Cancelado
+					</td>
+					<td class="px-6 py-4">
+						$18.75
+					</td>
+					<td class="px-6 py-4">
+						Avenida 6 #25-40
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						8765
+					</th>
+					<td class="px-6 py-4">
+						En camino
+					</td>
+					<td class="px-6 py-4">
+						$45.67
+					</td>
+					<td class="px-6 py-4">
+						Calle 10 #5-6
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						4521
+					</th>
+					<td class="px-6 py-4">
+						En proceso
+					</td>
+					<td class="px-6 py-4">
+						$62.30
+					</td>
+					<td class="px-6 py-4">
+						Carrera 3 #12-34
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						8910
+					</th>
+					<td class="px-6 py-4">
+						Entregado
+					</td>
+					<td class="px-6 py-4">
+						$99.99
+					</td>
+					<td class="px-6 py-4">
+						Avenida 2 #25-30
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						5674
+					</th>
+					<td class="px-6 py-4">
+						Pendiente
+					</td>
+					<td class="px-6 py-4">
+						$37.50
+					</td>
+					<td class="px-6 py-4">
+						Calle 78 #23-45
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="border-b bg-gray-50">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						2341
+					</th>
+					<td class="px-6 py-4">
+						Cancelado
+					</td>
+					<td class="px-6 py-4">
+						$51.25
+					</td>
+					<td class="px-6 py-4">
+						Carrera 9 #5-20
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				<tr
+					class="bg-white border-b">
+					<th scope="row"
+						class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+						7890
+					</th>
+					<td class="px-6 py-4">
+						En camino
+					</td>
+					<td class="px-6 py-4">
+						$72.50
+					</td>
+					<td class="px-6 py-4">
+						Avenida 4 #15-25
+					</td>
+					<td class="px-3 py-4">
+						<button type="button"
+							data-modal-target="edit-modal"
+							data-modal-toggle="edit-modal"
+							class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center">
+							Editar
+						</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

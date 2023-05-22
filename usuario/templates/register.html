@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/src/css/subtarjeta.css'%}">
+{% endblock %}
+
+{% block content %}
+
+  <!-- Formulario registro -->
+  <div class="flex justify-center items-center min-h-screen relative ">
+
+
+
+
+
+    
+    <div
+      class="w-full sm:w-3/4 lg:max-w-3xl border border-gray-200 shadow p-8 mx-auto Caja-register bg-white rounded-lg z-10">
+        <div class="space-y-6 flex flex-col">
+            <form action="" id="formulario5" name="formulario5">
+                <h5
+                class="text-xl font-medium text-gray-900">Registra tu cuenta</h5>
+                <div>
+                <label for="nombre"
+                        class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
+                <input type="text" name="nombre" id="nombre"
+                        placeholder=""
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required/>
+                </div>
+                <div>
+                <label for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900">Correo</label>
+                <input type="email" name="email" id="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="name@company.com" required/>
+                </div>
+                <div>
+                <label for="password"
+                        class="block mb-2 text-sm font-medium text-gray-900">Contraseña</label>
+                <input type="password" name="password" id="password"
+                        placeholder="••••••••"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required/>
+                </div>
+
+                <div>
+                <label for="celular"
+                        class="block mb-2 text-sm font-medium text-gray-900">Numero
+                    celular</label>
+                <input type="text" name="celular" id="celular"
+                        placeholder="+56912345678"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required/>
+                </div>
+                <div>
+                <label for="direccion"
+                        class="block mb-2 text-sm font-medium text-gray-900">Direccion</label>
+                <input type="text" name="direccion" id="direccion"
+                        placeholder="Av. Siempre Viva 123"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required/>
+                </div>
+                <div class="flex items-start mb-6 my-8">
+                <div class="flex items-center h-5">
+                    <input name="Acepto" id="Acepto" type="checkbox" value=""
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                        required>
+                </div>
+                <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Acepto 
+                    <a href="../pages/404.html" class="text-blue-600 hover:underline">condiciones</a>.</label>
+                </div>
+                <button id="guardar1" name="guardar1" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Registrarse
+                </button>
+                <div class="text-sm font-medium text-gray-500">
+                Ya estas registrado? <a href="../pages/login.html"
+                                        class="text-blue-700 hover:underline">Ingresa
+                aqui</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="absolute w-full h-full z-0">
+      <img class="h-full w-full object-cover" src="{% static '/imagens/fondo.png'%}"/>
+    </div>
+    </div>
+   
+
+<!-- drawer -->
+{% include 'drawer.html' %}
+
+{% endblock content %}
+
+{% block js %}
+<script src="{% static '/src/js/FormRegistrarse.js' %}"></script>
+{% endblock %}

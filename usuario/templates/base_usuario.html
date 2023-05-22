@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% include 'drawer.html' %}
+	<div class="w-full md:pl-64 flex flex-col h-full space-y-0">
+		{% include 'aside.html' %}
+		{% block aside-content %}{% endblock %}
+	</div>
+{% endblock %}

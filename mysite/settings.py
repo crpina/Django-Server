@@ -35,10 +35,19 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
-INSTALLED_APPS = ['corsheaders', 'django.contrib.admin', 'django.contrib.auth',
-	'django.contrib.contenttypes', 'django.contrib.sessions',
-	'django.contrib.messages', 'django.contrib.staticfiles', 'tienda', 'shared',
-	'api', ]
+INSTALLED_APPS = [
+	'corsheaders',
+	'django.contrib.admin',
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.messages',
+	'django.contrib.staticfiles',
+	'tienda',
+	'shared',
+	'api',
+	'administracion',
+	'usuario']
 
 CORS_ORIGIN_ALLOW_ALL = True  # Permitir todas las solicitudes de cualquier origen
 
