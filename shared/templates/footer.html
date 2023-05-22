@@ -3,7 +3,7 @@
 	<div class="mx-auto w-full container p-4 sm:p-6">
 		<div class="md:flex md:justify-between">
 			<div class="flex md:basis-1/2 flex-col items-center mb-6 md:mb-0">
-				<a href="/static"
+				<a href="{% url 'inicio' %}"
 					class="flex items-center hover:text-black">
 					<img src="{% static 'imagens/R.png' %}"
 						class="h-24 object-contain w-8 mr-3"
@@ -99,21 +99,21 @@
 						Contactanos</h2>
 					<ul class="text-gray-600">
 						<li class="mb-4">
-							<a href="/404"
+							<a href="{% url '404' %}"
 								class="hover:text-black hover:underline">+569
 								12345678</a>
 						</li>
 						<li class="mb-4">
-							<a href="/404"
+							<a href="{% url '404' %}"
 								class="hover:text-black hover:underline">correo</a>
 						</li>
 						<li class="mb-4">
-							<a href="/404"
+							<a href="{% url '404' %}"
 								class="hover:text-black hover:underline">direccion 12. region.
 								chile</a>
 						</li>
 						<li>
-							<a href="/404"
+							<a href="{% url '404' %}"
 								class="hover:text-black hover:underline">horario de atencion</a>
 						</li>
 					</ul>

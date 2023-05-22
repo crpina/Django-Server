@@ -2,16 +2,46 @@
 {% load static %}
 
 {% block title %}
-	Cambiar Contraseña
+    Cambiar Contraseña
 {% endblock title %}
 
-{% block css %}
-{% endblock %}
-
 {% block content %}
-	<!-- drawer -->
-	{% include 'drawer.html' %}
+    <div class="w-full h-full flex justify-center items-center z-10">
+        <div
+                class="sm:w-3/4 lg:max-w-3xl mx-auto sm:my-20 py-4 bg-white border border-gray-200 rounded-lg shadow p-8">
+            <div class="space-y-6">
+                <h5
+                        class="text-xl font-medium text-gray-900">Cambiar contraseña</h5>
+                <div>
+                    <label for="password"
+                           class="block mb-2 text-sm font-medium text-gray-900">Contraseña</label>
+                    <input type="password" name="password" id="password"
+                           placeholder="••••••••"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    />
+                </div>
+                <div>
+                    <label for="password"
+                           class="block mb-2 text-sm font-medium text-gray-900">Reingresa la contraseña</label>
+                    <input type="password" name="password" id="password-re"
+                           placeholder="••••••••"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    />
+                </div>
+                <div>
+                    <a
+                            href="{% url 'login' %}"
+                            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Confirmar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute w-full h-full z-0">
+        <img class="h-full w-full object-cover" src="{% static 'imagens/fondo.png' %}"/>
+    </div>
 {% endblock content %}
 
 {% block js %}
+    <script src="{% static '/src/js/CambiarContrasena.js' %}"></script>
 {% endblock %}
