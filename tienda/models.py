@@ -14,7 +14,6 @@ from django.db import models
 
 
 from django.db import models
-from django import forms
 
 class Producto(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -22,9 +21,3 @@ class Producto(models.Model):
 	image = models.FileField()
 	nombre = models.CharField( max_length=100 )
 
-class ProductoForm(forms.ModelForm):
-	class Meta:
-		model = Producto
-		fields = ['valor', 'nombre', 'image']
-
-	image = forms.ImageField()
