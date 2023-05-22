@@ -2,6 +2,7 @@ import os
 
 from django.http import JsonResponse
 from firebase_admin import db, storage
+from tienda import models as tienda_models
 
 from mysite.settings import BASE_DIR
 
@@ -109,11 +110,17 @@ def subcription( request ):
 
 
 def file( request ):
-	if request.method == 'POST' and request.FILES['imagen']:
-		imagen = request.FILES['imagen']
+	if request.method == 'POST':
+		form = tienda_models.ProductoForm( request.POST, request.FILES )
+		if form.is_valid():
+			image_file = form.cleaned_data['image']
+			return JsonResponse( {
+				# 'status': 'Imagen subida exitosamente'
+				'status': 'true'
+			} )
+
 		return JsonResponse( {
-			# 'status': 'Imagen subida exitosamente'
-			'status': imagen
+			'status': 'false'
 		} )
 
 	return JsonResponse( {

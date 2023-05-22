@@ -14,9 +14,17 @@ from django.db import models
 
 
 from django.db import models
+from django import forms
 
 class Producto(models.Model):
 	id = models.AutoField(primary_key=True)
 	valor = models.DecimalField(max_digits=10, decimal_places=2)
-	url_imagen = models.URLField()
+	image = models.FileField()
 	nombre = models.CharField( max_length=100 )
+
+class ProductoForm(forms.ModelForm):
+	class Meta:
+		model = Producto
+		fields = ['valor', 'nombre', 'image']
+
+	image = forms.ImageField()
