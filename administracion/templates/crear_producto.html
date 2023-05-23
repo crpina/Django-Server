@@ -8,8 +8,9 @@
 			<div class="space-y-6">
 				<h5
 					class="text-xl font-medium text-gray-900">Nuevo Producto</h5>
-				<form action="post"
+				<form method="POST"
 					class="space-y-6"
+					enctype="multipart/form-data"
 					id="form4">
 					{% csrf_token %}
 					<div>

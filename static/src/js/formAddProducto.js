@@ -19,6 +19,7 @@ $( document )
 				const formData  = new FormData( this )
 				const imageName = formData.get( 'imagen' ).name
 				formData.append( 'imageName', imageName )
+				console.log( { formData })
 
 				const peticionCreacion = $.ajax( {
 						async      : true,
