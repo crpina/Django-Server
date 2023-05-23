@@ -16,6 +16,19 @@ const productsList = []
 
 $( document )
 	.ready( function () {
+		const pProductos = $.ajax( {
+				async      : true,
+				crossDomain: true,
+				url        : 'https://django-server-production-d59b.up.railway.app/api/productos',
+				method     : 'GET',
+				processData: false,
+				contentType: false
+			}
+		)
+		pProductos.done( function ( response ) {
+			console.log( { response } )
+		} )
+
 		const ofertas   = $( '#ofertas' )
 		const productos = $( '#productos' )
 

@@ -12,49 +12,49 @@ $( document )
 		let precio = $( '#precio' )
 		let form   = $( '#form4' )
 
-		form.submit( function ( e ) {
-			e.preventDefault()
-			console.log( 'form' )
-			const file = $( '#dropzone-file' )
+		form.submit(
+			function ( event ) {
+				event.preventDefault()
 
-			let formData = new FormData( this )
+				const formData  = new FormData( this )
+				const imageName = formData.get( 'imagen' ).name
+				formData.append( 'imageName', imageName )
 
-			formData.append( 'file', file.val() )
-
-			const peticionProductos = $.ajax( {
-					async      : true,
-					crossDomain: true,
-					url        : 'https://django-server-production-d59b.up.railway.app/api/file',
-					method     : 'POST',
-					data       : JSON.stringify( formData ),
-				}
-			)
-			peticionProductos.done( function ( response ) {
-				console.log( 'response' )
-				console.log( response )
-			} )
-
-			return
-			form.validate( {
-				rules   : {
-					nombre: {
-						required: true
-
-					},
-					precio: {
-						required: true
-
+				const peticionCreacion = $.ajax( {
+						async      : true,
+						crossDomain: true,
+						url        : 'https://django-server-production-d59b.up.railway.app/api/producto/crear',
+						method     : 'POST',
+						data       : formData,
+						processData: false,
+						contentType: false
 					}
+				)
+				peticionCreacion.done( function ( response ) {
+					console.log( { response } )
+				} )
+			}
+		)
+
+		form.validate( {
+			rules   : {
+				nombre: {
+					required: true
+
 				},
-				messages: {
-					nombre: {
-						required: 'Debe ingresar un nombre'
+				precio: {
+					required: true
 
-					},
-					precio: {
-						required: 'Debe ingresar un precio valido.'
-					}
 				}
-			} )
+			},
+			messages: {
+				nombre: {
+					required: 'Debe ingresar un nombre'
+
+				},
+				precio: {
+					required: 'Debe ingresar un precio valido.'
+				}
+			}
 		} )
-	} )
+} )
